@@ -1,9 +1,20 @@
-lst = [1,3,4,5,7,8,1,3,5,7,1,3,4,7,8,5]
-n = 0
-for i in lst:
-    if n==0 and i==1 or n==1 and i==1 or n==2 and i==5:
-        n+=1
-if n==3:
-    print("It's a Match")
-else:
-    print("it's Gone")
+class bankaccount():
+    def __init__(self, owner_name, balance):
+        self.owner_name = owner_name 
+        self.balance = balance
+
+    def deposit(self, amount):
+        self.balance += amount
+        return print("total amount: ",self.balance)
+    def withdraw(self, amount):
+        if amount > self.balance:
+            return print("total balance is low")
+        else:
+            self.balance-= amount
+            return print("total balance: ",self.balance)
+
+bank = bankaccount('John',25000)
+bank.deposit(5000)
+bank.withdraw(25000)
+bank.deposit(500)
+bank.withdraw(6000)

@@ -1,12 +1,19 @@
-lst = list(range(2501))
-count = 0
-def prime(n):
-    count = 0
-    for i in range(1,n+1):
-        if n%i==0:
-            count+=1
-    if count == 2:
-        return n
-temp_list = list(filter(lambda n: prime(n),lst))
-print(temp_list)
-    
+from math import sqrt
+class cone():
+    def __init__(self,radius,height,pi):
+        self.radius = radius
+        self.height = height
+        self.pi = pi
+
+    def volume(self):
+        vol = self.radius*self.radius*self.pi*self.height/3
+        return print("volume is: ",vol)
+    def surfacearea(self):
+        l = pow(self.radius,2) + pow(self.height,2)
+        area = self.radius*self.pi*sqrt(l)
+        return print("surface area is: ",area)
+
+cn = cone(5,10,3.14)
+cn.volume()
+cn.surfacearea()
+                                                   
